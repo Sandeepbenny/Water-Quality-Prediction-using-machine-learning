@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Oregano-Regular
+font link: https://fonts.google.com/specimen/Oregano
+font author: Astigmatic
+font author site: http://www.astigmatic.com/
+Slogan Font: SpaceMono-Regular.ttf
+
+icon designer: birdie brain
+icon designer link: /birdie brain
+        
+{"bg-gradient-0":"#006678","bg-gradient-1":"#4FA8FF","icon":"#ffffff","font":"#ffffff","slogan":"#ffffff"}
+      
