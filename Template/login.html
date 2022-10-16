@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+  <!DOCTYPE html>
+<html>
+<style>
+	/*set border to the form*/
+	
+	form {
+		border: 3px solid #f1f1f1;
+	}
+	/*assign full width inputs*/
+	
+	input[type=text],
+	input[type=password] {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		box-sizing: border-box;
+	}
+	/*set a style for the buttons*/
+	
+	button {
+		background-color: #ff7300;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+	}
+	/* set a hover effect for the button*/
+	
+	button:hover {
+		opacity: 0.8;
+	}
+	/*centre the display image inside the container*/
+	
+	.imgcontainer {
+		text-align: center;
+		margin: 14px 0 12px 0;
+	}
+	/*set image properties*/
+	
+	img.avatar {
+		width: 10%;
+		border-radius: 50%;
+	}
+	/*set padding to the container*/
+	
+	.container {
+		padding: 30px;
+	}
+	/*set the forgot password text*/
+	
+	span.psw {
+		float: right;
+		padding-top: 16px;
+	}
+	/*set styles for span and cancel button on small screens*/
+	
+	@media screen and (max-width: 100px) {
+		span.psw {
+			display: block;
+			float: none;
+		}
+		.cancelbtn {
+			width: 100%;
+		}
+	}
+</style>
+
+<body>
+   
+  	<h2 style="text-align:center"> Admin Page</h2>
+	<!--Step 1 : Adding HTML-->
+	<form action="/verifylogin/" method ="post">
+    {% csrf_token %}
+		<div class="imgcontainer">
+			<img src=
+"data:image/png;base64,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"
+				alt="Avatar" class="avatar">
+		</div>
+
+		<div class="container">
+			<label><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" name="username" required>
+
+			<label><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="password" required>
+
+			<button type="submit">Login</button>
+			<input type="checkbox" checked="checked"> Remember me
+		</div>
+	</form>
+
+</body>
+
+</html>
+
+      <div class="col align-self-end">
+        One of three columns
+      </div>
+    </div>
+  </div>
+</body>
+</html>
