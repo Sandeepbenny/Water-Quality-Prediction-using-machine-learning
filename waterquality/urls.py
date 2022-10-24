@@ -23,6 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',LoginView),
     path('verifylogin/',verifyloginview),
+    path('prediction/',prediction),
+    path('processdata/',processdataview),
+    path('Result/',Result),
 
 ]
-urlpatterns += staticfiles_urlpatterns()
+

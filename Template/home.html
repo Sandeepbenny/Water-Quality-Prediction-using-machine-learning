@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
    </head>
-   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -22,10 +22,9 @@ body{
   background: #131314;
   overflow: hidden;
 }
-::selection{
+/*::selection{
   color: #000;
-  background: #fff;
-}
+  background: #fff;}
 nav{
   position: fixed;
   background: #1b1b1b;
@@ -40,10 +39,10 @@ nav .menu{
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-}
+}*/
 .menu .logo a{
   text-decoration: none;
-  color: #fff;
+  color: rgb(255, 255, 255);
   font-size: 35px;
   font-weight: 600;
 }
@@ -59,7 +58,7 @@ nav .menu{
 }
 .menu ul li a{
   text-decoration: none;
-  color: #fff;
+  color: rgb(255, 255, 255);
   font-size: 18px;
   font-weight: 500;
   padding: 8px 15px;
@@ -67,8 +66,8 @@ nav .menu{
   transition: all 0.3s ease;
 }
 .menu ul li a:hover{
-  background: #fff;
-  color: black;
+  background: rgb(23, 21, 21);
+  color: rgb(186, 32, 32);
 }
 .img{
   background: url('img3.jpg')no-repeat;
@@ -100,7 +99,7 @@ nav .menu{
   font-weight: 600;
 }
 .center .sub_title{
-  color: #fff;
+  color: rgb(44, 120, 8);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 32px;
   font-weight: 600;
@@ -114,7 +113,7 @@ nav .menu{
   border-radius: 5px;
   border: none;
   margin: 0 10px;
-  border: 2px solid white;
+  border: 2px solid rgb(216, 55, 55);
   font-size: 20px;
   font-weight: 500;
   padding: 0 10px;
@@ -122,20 +121,27 @@ nav .menu{
   outline: none;
   transition: all 0.3s ease;
 }
-.center .btns button:first-child{
-  color: #fff;
-  background: none;
-}
+/*.center .btns button:first-child{
+  color: rgb(244, 236, 236);
+  background: none;}*/
 .btns button:first-child:hover{
-  background: white;
+  background: rgb(235, 229, 229);
   color: black;
 }
 .center .btns button:last-child{
-  background: white;
+  background: rgb(199, 81, 81);
   color: black;
 }
-
-   </style>
+.center .btns button:hover{
+  background: rgb(203, 196, 196);
+  color: black;
+}
+.Footer .li{
+    background-color: #4070F4;
+    color:aqua;
+    text-align: center;
+  }
+</style>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 *{
@@ -144,13 +150,6 @@ nav .menu{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-/*body{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #010718;
-    overflow: hidden;}*/
 .container{
     width: 500px;
     overflow: hidden;
@@ -186,32 +185,23 @@ nav .menu{
 
 </style>
 <body>
-  <nav>
-    <div class="menu">
-      <div class="logo">
-        <a href="#">Water   Quality Prediction</a>
-      </div>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Algorithm</a></li>
-      </ul>
-    </div>
-  </nav>
   <div class="img"></div>
   <div class="center">
     <div class="title">WATER QUALITY PREDICTION</div>
-    <div class="sub_title">Go green,Drink clean</div><br>
+    <div class="sub_title"><br>Go Green, Drink Clean</div><br>
   <div class="container">
     <div class="center">
       <br> <br> <br> <br> <span class="text first-text">Prediction System</span>
       <span class="text sec-text"></span>
     </div>
     </div>
-    <div class="btns">
+    <form action="/prediction/" method="POST">
+      {% csrf_token %}  
       <br> <br>
-      <button>Predict</button>
+      <div class="btns">
+      <button class="btns" type="submit">Predict</button>
     </div>
+    </form>
   </div>
   <script>
     const text = document.querySelector(".sec-text");
@@ -231,23 +221,9 @@ nav .menu{
     textLoad();
     setInterval(textLoad, 12000);
 </script>    
-  <footer>
-    <ul>Algorithm</ul>
-    <ul>Model</ul>
+  <footer class="Footer">
+    <li style="color:aqua";>Algorithm</ul>
+    <p style="color: aqua;"> Algorithm which is used to predict the model is Decision Tree</p>
   </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="style.css">
-    <!--<title>Typing Text Animation</title>-->
-</head>
-<body>
-</body>
 </html>
 
