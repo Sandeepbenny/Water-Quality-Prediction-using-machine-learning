@@ -25,6 +25,9 @@ def verifyloginview(request):
 
 def prediction(request):
      return render(request,'prediction.html')
+
+def restart(request):
+    return render(request,'home.html')
  
 def processdataview(request):
     if request.method == 'POST':

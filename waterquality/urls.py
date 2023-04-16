@@ -26,6 +26,7 @@ urlpatterns = [
     path('prediction/',prediction),
     path('processdata/',processdataview),
     path('Result/',Result),
+    path('home/',restart)
 
 ]
 

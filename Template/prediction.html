@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,3 +49,71 @@
     {% endif %}
 </body>
 </html>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Prediction</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+     <style>
+         /* Additional CSS styles for animations and aesthetic enhancements */
+         .container {
+             padding-top: 50px;
+         }
+ 
+         .form-control {
+             border-radius: 30px;
+         }
+ 
+         .btn-primary {
+             border-radius: 30px;
+             transition: all 0.3s ease;
+         }
+ 
+         .btn-primary:hover {
+             transform: scale(1.05);
+         }
+     </style>
+ </head>
+ <body>
+     <div class="container">
+         <div class="row justify-content-center align-items-center">
+             <div class="col-md-6">
+                 <form class="mt-5" action="/processdata/" method="POST">
+                     {% csrf_token %}       
+                     <input type="text" id="PH" name="PH" placeholder="PH" class="form-control">
+                     <br>
+                     <input type="text" id="Hardness" name="Hardness" placeholder="Hardness" class="form-control">  
+                     <br>
+                     <input type="text" id="Solids" name="Solids" placeholder="Solids" class="form-control">
+                     <br>
+                     <input type="text" id="Chloramines " name="Chloramines" placeholder="Chloramines" class="form-control">
+                     <br>
+                     <input type="text" id="Sulfate" name="Sulfate" placeholder="Sulfate" class="form-control">
+                     <br>
+                     <input type="text" id="Conductivity" name="Conductivity" placeholder="Conductivity" class="form-control">
+                     <br>
+                     <input type="text" id="Organic_carbon" name="Organic_carbon" placeholder="Organic_carbon" class="form-control">
+                     <br>
+                     <input type="text" id="Trihalomethanes" name="Trihalomethanes" placeholder="Trihalomethanes" class="form-control">
+                     <br>
+                     <input type="text" id="Turbidity" name="Turbidity" placeholder="Turbidity" class="form-control">
+                     <br>
+                     <button class="btn btn-primary form-control" type="submit">CHECK</button>
+                 </form>
+             </div>
+         </div>
+         {% if result %}
+         <div class="row justify-content-center mt-3">
+             <div class="col-md-6">
+                 <h1 class="text-center">{{result}}</h1>
+             </div>
+         </div>
+         {% endif %}
+     </div>
+ </body>
+ </html>
+ 

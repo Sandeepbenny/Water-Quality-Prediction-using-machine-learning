@@ -1,18 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Water Result</title>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .result {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.5s ease-in-out;
+        }
+
+        h1 {
+            color: #333333;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            color: #444444;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .btns {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btns:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <p>The result of the water is </p>
-    <br>
-    {% if result %}
-    <div>
-        <h1>{{result}}</h1>
+    <div class="container">
+        <h1>Water Result</h1>
+        <div class="result">
+            {% if result %}
+            <h2>{{ result }}</h2>
+            {% endif %}
+        </div>
     </div>
-    {% endif %}
+    <form action="/home/" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <button class="btns" type="submit">Predict Again</button>
+        </div>
+    </form>
 </body>
+
 </html>
+
+ 
+
